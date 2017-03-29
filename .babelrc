@@ -1,0 +1,13 @@
+{ "presets": ["es2015", "stage-0"],
+  "plugins": [
+    "add-module-exports",
+    "transform-vue-jsx",
+    ["import", {
+      "libraryName": "miox-vuc2x",
+      "libraryDirectory": "src/components"
+    }],
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "transform-runtime"
+  ]
+}

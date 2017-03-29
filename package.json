@@ -1,0 +1,70 @@
+{
+  "name": "vue-ui-tabs",
+  "version": "0.0.3",
+  "description": "选项卡组件，支持动画和手势",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=publish node_modules/.bin/webpack-dev-server --config webpack.config.js --host 0.0.0.0 --port 8899 --progress --colors --inline --hot --display-error-details --content-base src/",
+    "build": "rimraf ./build/ && NODE_ENV=production webpack --config webpack.config.js -p",
+    "pub": "rimraf ./publish/ && NODE_ENV=publish webpack --config webpack.config.js -p && npm publish --registry http://npm.51.nb",
+    "git": "git add . && git commit -am 'update changes' && git push"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "files": [
+    "src",
+    "!src/publish/",
+    "publish",
+    "build"
+  ],
+  "devDependencies": {
+    "@u51/miox-highlight": "0.0.3",
+    "autoprefixer": "^6.3.7",
+    "babel-core": "^6.11.4",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-import": "^1.1.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-remove-console": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-plugin-transform-vue-jsx": "^3.2.0",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-runtime": "^6.18.0",
+    "css-loader": "^0.26.1",
+    "html-webpack-plugin": "^2.24.1",
+    "json-loader": "^0.5.4",
+    "miox-animate": "^1.0.0",
+    "miox-core": "^1.0.4",
+    "miox-vuc2x": "0.0.19",
+    "miox-vue2x": "^0.1.2",
+    "node-sass": "^3.8.0",
+    "postcss-loader": "^0.9.1",
+    "postcss-plugin-px2rem": "^0.6.0",
+    "postcss-px2rem": "^0.3.0",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^4.0.2",
+    "script-ext-html-webpack-plugin": "^1.3.2",
+    "style-ext-html-webpack-plugin": "^2.0.5",
+    "style-loader": "^0.13.1",
+    "uglify-loader": "^1.3.0",
+    "url-loader": "^0.5.7",
+    "vue-loader": "^10.0.2",
+    "vue-template-compiler": "^2.1.4",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {},
+  "author": "measy",
+  "license": "ISC",
+  "project": {
+    "type": "vue-component"
+  }
+}
