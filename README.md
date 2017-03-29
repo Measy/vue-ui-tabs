@@ -4,10 +4,13 @@
 ## Adapt
 通过rem适配方案，组件可以自适应各个移动端尺寸。[https://github.com/amfe/article/issues/17](https://github.com/amfe/article/issues/17)
 
-##Example
+## Example
+```
   git clone
   npm install
   npm run dev可以在http://localhost:8899/中查看demo,建议开发者工具中选中手机移动端
+```
+
 ## Usage
 ```javascript
   export default {
