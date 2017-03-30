@@ -14,7 +14,7 @@ const result = {};
  * @type {*|Promise.<*>}
  */
 result.entry = {
-    'index': [path.resolve(__dirname, '../src/publish/index')]
+    'index': [path.resolve(__dirname, '../src/index')]
 };
 /**
  * 配置输出文件地址和输出文件模式
