@@ -101,25 +101,27 @@ export default {
         },
         dragStart(evt) {
             if (!this.swipeable) return;
+            this.swiping = true;
             evt = evt.changedTouches ? evt.changedTouches[0] : evt;
             this.start.x = evt.pageX;
             this.start.y = evt.pageY;
         },
         onDrag(evt) {
-            const e = evt.changedTouches ? evt.changedTouches[0] : evt;
-            const offsetLeft = e.pageX - this.start.x;
-            const x = Math.abs(offsetLeft);
+            if (this.swiping) {
+                const e = evt.changedTouches ? evt.changedTouches[0] : evt;
+                const offsetLeft = e.pageX - this.start.x;
+                const x = Math.abs(offsetLeft);
 
-            if (x < this.offset) return;// 防误触
-            this.swiping = true;
+                if (x < this.offset) return;// 防误触
 
-            evt.preventDefault();
+                evt.preventDefault();
 
-            const pageWidth = this.$refs.container.offsetWidth;
-            const offsetPercent = ((offsetLeft / pageWidth) + this.currentIndex * -1) * 100 // 为百分数的数字部分
+                const pageWidth = this.$refs.container.offsetWidth;
+                const offsetPercent = ((offsetLeft / pageWidth) + this.currentIndex * -1) * 100 // 为百分数的数字部分
 
-            this.offsetLeft = offsetLeft;
-            this.swipeMove(offsetPercent);
+                this.offsetLeft = offsetLeft;
+                this.swipeMove(offsetPercent);
+            }
         },
         swipeMove(offsetPercent) {
             if (!this.isValid() && this.bounce) return; // 在边界的情况下，滑动越界，并且关闭了反弹配置，关闭边界反弹
